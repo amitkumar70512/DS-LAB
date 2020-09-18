@@ -1,0 +1,53 @@
+#include<stdio.h>
+
+struct student 
+{
+	int id;
+	int age ;
+	int marks ;
+};
+
+
+	int main ()
+	{
+		 int i,max;
+		 printf("enter the max number of student for admission \t");
+		 scanf("%d",&max);
+		 
+		 struct student arr[max];
+		 
+		 for(i=0;i<max;i++)
+		 {
+			 printf("\n Enter  the details of student %d\n",i+1);
+			 printf("enter student id:");
+			 scanf("%d",&arr[i].id);
+			 printf("enter student age");
+			 scanf("%d",&arr[i].age);
+			 printf("enter student marks ");
+			 scanf("%d",&arr[i].marks);
+		 }
+		  
+		 
+			 for(i=0;i<max;i++)
+			 {
+				 if(arr[i].age>20 && arr[i].marks>=0 && arr[i].marks<=100)
+				  {
+					  printf("data is valid for student %d\n\n",i+1);
+				       
+						
+				  }	 
+				else 
+				{
+				printf(" data is not valid for  student %d\n ",i+1);
+				}
+				if(arr[i].marks>=65)
+				{
+							printf("student having id=%d is qualified for admission\n", arr[i].id);
+					}
+					else 
+					{
+						printf("student having id=%d is  not qualified for admission\n\n", arr[i].id);
+					}
+	}		 
+	 return 0;
+ }
