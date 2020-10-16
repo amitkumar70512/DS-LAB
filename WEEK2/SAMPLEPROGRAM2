@@ -1,0 +1,153 @@
+#include<stdio.h>
+
+int main()
+{
+int n,i,j,k=1;
+printf("enter the value of rows ");
+scanf("%d",&n);
+ for(i=1;i<=n;i++)
+   {
+      for(j=1;j<=i;j++)
+         {
+         printf("%d\t",k);
+         k++;
+          }
+      printf("\n");
+    }
+ 
+return 0;
+}
+
+
+
+
+#include<stdio.h>
+
+int main()
+{
+    int a,b;
+    printf("Enter two integers:");
+    scanf("%d %d",&a,&b);
+
+    int i,j,k;
+    printf("The prime numbers between %d and %d:\n",a,b);
+    for(i=a;i<=b;i++)
+    {
+        for(j=2;j<=i/2;j++)
+        {
+            if(i%j==0)
+            {
+                k=0;
+                break;
+            }
+            else
+                k=1;
+        }
+        if(k==1)
+            printf("%d\n",i);
+
+    }
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+#include<stdio.h>
+
+int main()
+{
+    float cie_marks, see_marks;
+    printf("Enter cie and see marks:");
+    scanf("%f %f",&cie_marks,&see_marks);
+    float total = cie_marks + (see_marks/2);
+    printf("The Grade of student:");
+    if(total>=90)
+        printf("S\n");
+    else if(total>=80 && total<90)
+        printf("A\n");
+    else if(total>=70 && total<80)
+        printf("B\n");
+    else if(total>=60 && total<70)
+        printf("C\n");
+    else if(total>=50 && total<60)
+        printf("D\n");
+    else if(total>=40 && total<50)
+        printf("E\n");
+    else
+        printf("F\n");
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+#include<stdio.h>
+#include<string.h>
+#include<math.h>
+int main()
+{
+    char shape1[]="cylinder";
+    char shape2[]="cone";
+    char shape3[]="sphere";
+    char quit[]="quit";
+    char choice[50];
+    const float pi=3.142;
+    while(1)
+    {
+        printf("Enter a shape:  ");
+        scanf("%s",choice);
+         
+			        if(strcmp(choice,shape1)==0)
+			        {
+			            float r,h;
+			            float a,v;
+			            printf("Enter the radius and height of cylinder:");
+			            scanf("%f %f",&r,&h);
+			            a=(2*pi*r*h)+(2*pi*r*r);
+			            v=pi*r*r*h;
+			            printf("Area:%f  Volume:%f\n",a,v);
+			        }
+			        else if(strcmp(choice,shape2)==0)
+			        {
+			            float r,h;
+			            float a,v;
+			            printf("Enter the radius and height of cone:");
+			            scanf("%f %f",&r,&h);
+			            a=(pi*r)*(r + sqrt(h*h + r*r));
+			            v=pi*r*r*(h/3);
+			            printf("Area:%f  Volume:%f\n",a,v);
+			        }
+			        else if(strcmp(choice,shape3)==0)
+			        {
+			            float r;
+			            float a,v;
+			            printf("Enter the radius  of sphere:");
+			            scanf("%f",&r);
+			            a=4*pi*r*r;
+			            v=(4.0/3.0)*pi*r*r*r;
+			            printf("Area:%f  Volume:%f\n",a,v);
+			        }
+			        else if(strcmp(choice,quit)==0)
+			            break;
+			        else
+			            printf("Invalid choice");
+			            
+printf("\n\nto exit  enter *quit  else\t");
+    }
+    
+    return 0;
+}
