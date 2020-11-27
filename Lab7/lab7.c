@@ -1,7 +1,7 @@
 
 /*WAP to Implement Singly Linked List with following operations
-a) a) Create a linked list. b) Deletion of first element, specified element and last element in
-the list. c) Display the contents of the linked list.*/
+a) a) Create a linked list. b) Deletion of  last element in
+the list. c) sorting of linked list  d) reverse e) concatenation of linked list e)display .*/
 
 
 #include<stdio.h>
