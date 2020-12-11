@@ -1,0 +1,116 @@
+/*WAP to implement Stack  using Linked Representation*/
+
+#include<stdio.h>
+#include<conio.h>
+#include<stdlib.h>
+
+struct nodestack{
+int data;
+struct nodestack *next
+};
+
+struct nodestack *temp=NULL;
+struct nodestack *top=NULL,*head=NULL;
+
+void push(){
+    struct nodestack *new=malloc(sizeof(struct nodestack));
+    int element;
+     printf("\n Enter the data :> \t");
+     scanf("%d",&element);
+if(top==NULL)
+    {
+        new->data=element;
+
+        head=new;
+
+
+    }
+    else{
+            temp=head;
+        while(temp->next!=NULL){
+            temp=temp->next;
+        }
+        new->data=element;
+        temp->next=new;
+    }
+new->next=NULL;
+top=new;
+}
+
+void pop(){
+temp=head;
+struct nodestack *ptr;
+int popele=top->data;
+printf("\n\t %d is poped from the stack",popele);
+    if(head->next==NULL){
+     top=NULL;
+    }else{while(temp->next!=NULL){
+        ptr=temp;
+        temp=temp->next;
+            }
+        ptr->next=NULL;
+        top=ptr;
+         }
+
+    free(temp);
+
+}
+
+void display(){
+temp=head;
+printf("\n Stack:\t");
+while(temp!=NULL){
+    printf("%d->",temp->data);
+    temp=temp->next;
+}
+printf("top");
+}
+
+
+int main()
+{
+    printf("\n \tStack implementation using Linked list \n");
+    int choice;
+    while(1){
+        printf("\n\t<----------------------->");
+        printf("\n Choose ::\n 1. push element into the stack ");
+        printf("\n 2. pop element from the stack ");
+        printf("\n 3. display \n 4. exit\n \t :--> ");
+        scanf("%d",&choice);
+        switch(choice){
+            case 1:{
+                push();
+            break;
+            }
+            case 2:{
+                if(top==NULL){
+                    printf("\n \tWarning! Stack Underflow \n \t\t Stack is already empty \n");
+                }
+                else{
+                    pop();
+                }
+            break;
+            }
+            case 3:{
+                 if(top==NULL){
+                    printf("\n \tWarning! Stack Underflow \n \t\t Stack is already empty \n");
+                }
+                else{
+                    display();
+                }
+            break;
+            }
+            case 4:{
+                exit(0);
+            break;
+            }
+            default:printf("Alert!!  Invalid option selected !");
+
+        }
+
+    }
+
+
+return 0;
+}
+
